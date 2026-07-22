@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dental",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "dental-landing"],
+      "port": 5173,
+      "autoPort": true
+    },
+    {
+      "name": "vera-demos",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["Proyect vera/vera/scripts/static-preview.mjs"],
+      "port": 4321,
+      "autoPort": true
+    }
+  ]
+}

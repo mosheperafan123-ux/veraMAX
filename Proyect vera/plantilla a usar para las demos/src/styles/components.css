@@ -1,0 +1,316 @@
+/* ============================================================
+   COMPONENTS · Editorial Luxury
+   Soft diffused shadows · nested paper cards · serif numerals
+   ============================================================ */
+
+/* — Buttons (Island pill + button-in-button arrow) — */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 0.85rem 0.8rem 1.5rem;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.98rem;
+  background: var(--ink);
+  color: var(--paper);
+  transition: transform 0.5s var(--ease-spring), box-shadow 0.5s var(--ease-spring), background 0.4s var(--ease-soft);
+  box-shadow: var(--shadow-sm);
+}
+.btn .ic {
+  display: grid; place-items: center;
+  width: 1.9rem; height: 1.9rem;
+  border-radius: 50%;
+  background: rgba(250, 246, 239, 0.16);
+  transition: transform 0.5s var(--ease-spring);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn:hover .ic { transform: translate(3px, -2px); }
+.btn:active { transform: scale(0.98); }
+
+.btn--clay { background: var(--clay); }
+.btn--clay:hover { background: var(--clay-deep); }
+.btn--lg { font-size: 1.08rem; padding: 1rem 1rem 1rem 1.8rem; }
+.btn--lg .ic { width: 2.2rem; height: 2.2rem; }
+
+.btn--whats { background: #1f7a4d; }
+.btn--whats:hover { background: #19663f; }
+
+/* — Outline / text link button — */
+.btn-line {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-weight: 600; font-size: 0.95rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  transition: background 0.4s var(--ease-soft), border-color 0.4s var(--ease-soft);
+}
+.btn-line:hover { background: var(--paper-2); border-color: var(--ink-3); }
+
+.link-underline {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-weight: 600; color: var(--clay);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: gap 0.4s var(--ease-spring);
+}
+.link-underline:hover { gap: 0.75rem; }
+
+/* — Tag / chip — */
+.tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.74rem; font-weight: 600; letter-spacing: 0.02em;
+  padding: 0.4rem 0.85rem; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--card);
+}
+.tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--clay); }
+
+/* — Nested paper card (Double-Bezel in warm tones) — */
+.panel {
+  background: var(--paper-2);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-lg);
+  padding: 0.5rem;
+  box-shadow: var(--shadow-md);
+}
+.panel > .panel-in {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: calc(var(--r-lg) - 0.5rem);
+  padding: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 1.75rem;
+  transition: transform 0.55s var(--ease-spring), box-shadow 0.5s var(--ease-soft), border-color 0.4s var(--ease-soft);
+}
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--line); }
+
+/* ============================================================
+   HERO — Editorial Split
+   ============================================================ */
+.hero { padding-top: 9rem; padding-bottom: 4rem; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: end;
+}
+.hero-kicker { margin-bottom: 1.75rem; }
+.hero h1 { margin-bottom: 1.5rem; }
+.hero h1 .accent { color: var(--clay); font-style: italic; font-weight: 400; }
+.hero-lead { margin-bottom: 2.25rem; }
+.hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; }
+.hero-price { display: flex; flex-direction: column; line-height: 1.2; }
+.hero-price .old { font-size: 0.9rem; color: var(--ink-3); text-decoration: line-through; }
+.hero-price .now { font-family: var(--serif); font-size: 1.7rem; }
+.hero-price .now small { font-family: var(--sans); font-size: 0.8rem; color: var(--ink-2); }
+
+/* — Hero side index (editorial "table of contents") — */
+.hero-index {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.hero-index .hi-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--ink-2);
+}
+.hero-index .hi-row {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: baseline;
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid var(--line-soft);
+  transition: background 0.4s var(--ease-soft);
+}
+.hero-index .hi-row:last-child { border-bottom: none; }
+.hero-index .hi-row:hover { background: var(--paper-2); }
+.hero-index .hi-row .idx { font-variant-numeric: tabular-nums; color: var(--ink-3); font-size: 0.8rem; }
+.hero-index .hi-row .nm { font-family: var(--serif); font-size: 1.05rem; }
+.hero-index .hi-row .ct { font-size: 0.85rem; color: var(--clay); font-weight: 600; }
+
+/* ============================================================
+   STAT NUMERALS (big serif)
+   ============================================================ */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.stat { padding: 1.5rem 1.75rem; border-left: 1px solid var(--line); }
+.stat:first-child { border-left: none; padding-left: 0; }
+.stat .v { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1; }
+.stat .v .u { font-size: 0.9rem; color: var(--ink-2); font-family: var(--sans); }
+.stat .l { font-size: 0.82rem; color: var(--ink-2); margin-top: 0.5rem; }
+
+/* ============================================================
+   MANIFESTO pull-quote
+   ============================================================ */
+.manifesto { max-width: 24ch; }
+.manifesto .big {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.manifesto .big em { color: var(--clay); }
+
+/* ============================================================
+   OFFER LEDGER (Hormozi value stack as a luxury receipt)
+   ============================================================ */
+.ledger { display: grid; gap: 0; }
+.ledger-row {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 1.1rem; align-items: baseline;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.ledger-row .mk { color: var(--sage); font-family: var(--serif); font-size: 1rem; line-height: 1; }
+.ledger-row .desc .t { font-weight: 600; font-size: 1.05rem; }
+.ledger-row .desc .s { color: var(--ink-2); font-size: 0.88rem; }
+.ledger-row .amt { font-family: var(--serif); font-size: 1.15rem; white-space: nowrap; }
+.ledger-total {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem 1rem;
+  padding: 1.4rem 0 0.4rem;
+}
+.ledger-total .tl { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ink-2); }
+.ledger-total .tv { font-family: var(--serif); font-size: clamp(1.5rem, 4vw, 2rem); }
+.ledger-total .tv s { color: var(--ink-3); text-decoration-thickness: 2px; }
+
+.price-reveal {
+  margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--ink);
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.5rem;
+}
+.price-reveal .pr-l .ap { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--clay); }
+.price-reveal .pr-l .now { font-family: var(--serif); font-size: clamp(3rem, 9vw, 4.5rem); line-height: 0.95; }
+.price-reveal .pr-l .now small { font-family: var(--sans); font-size: 1.1rem; color: var(--ink-2); }
+.price-reveal .pr-l .sub { color: var(--ink-2); font-size: 0.92rem; margin-top: 0.4rem; }
+
+/* ============================================================
+   VALUE EQUATION
+   ============================================================ */
+.eq-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.eq { padding: 1.75rem; border-radius: var(--r-md); background: var(--card); border: 1px solid var(--line); transition: transform 0.55s var(--ease-spring), box-shadow 0.5s var(--ease-soft); }
+.eq:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.eq .ar { font-family: var(--serif); font-size: 2rem; line-height: 1; }
+.eq.up .ar { color: var(--sage); }
+.eq.down .ar { color: var(--clay); }
+.eq h3 { font-size: 1.15rem; margin: 0.9rem 0 0.5rem; }
+.eq p { color: var(--ink-2); font-size: 0.92rem; }
+
+/* ============================================================
+   CATALOG — editorial index
+   ============================================================ */
+.cat-filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+.cf-chip {
+  font-size: 0.86rem; font-weight: 500;
+  padding: 0.5rem 1.05rem; border-radius: 999px;
+  border: 1px solid var(--line); background: transparent; color: var(--ink-2);
+  transition: all 0.4s var(--ease-soft);
+}
+.cf-chip:hover { background: var(--paper-2); color: var(--ink); }
+.cf-chip.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.cat-list { display: grid; gap: 0; }
+.cat-item {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center;
+  padding: 1.6rem 0.5rem; border-top: 1px solid var(--line);
+  transition: padding 0.5s var(--ease-spring), background 0.4s var(--ease-soft);
+}
+.cat-list .cat-item:last-child { border-bottom: 1px solid var(--line); }
+.cat-item:hover { padding-left: 1.25rem; background: linear-gradient(90deg, var(--paper-2), transparent); }
+.cat-item .ci-idx { font-family: var(--serif); font-size: 1.5rem; color: var(--ink-3); width: 2.5rem; }
+.cat-item .ci-name { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 2rem); }
+.cat-item .ci-games { color: var(--ink-2); font-size: 0.88rem; margin-top: 0.25rem; }
+.cat-item .ci-games span { color: var(--ink-3); }
+.cat-item .ci-meta { text-align: right; white-space: nowrap; }
+.cat-item .ci-count { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1; }
+.cat-item .ci-val { font-size: 0.74rem; color: var(--ink-3); font-weight: 500; letter-spacing: 0.04em; }
+.cat-item.cat-total { border-top: 2px solid var(--ink); background: none; }
+.cat-item.cat-total:hover { padding-left: 0.5rem; background: none; }
+.cat-item.cat-total .ci-name { color: var(--clay); }
+.cat-item.cat-total .ci-count { color: var(--clay); }
+
+/* ============================================================
+   MARQUEE (editorial ticker)
+   ============================================================ */
+.ticker { display: flex; overflow: hidden; border-block: 1px solid var(--line); padding-block: 1.1rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.ticker-track { display: flex; gap: 3rem; padding-right: 3rem; animation: tick 55s linear infinite; white-space: nowrap; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes tick { to { transform: translateX(calc(-50% - 1.5rem)); } }
+.tick-item { display: inline-flex; align-items: baseline; gap: 0.7rem; font-family: var(--serif); font-size: 1.25rem; }
+.tick-item .star { color: var(--clay); font-size: 0.85rem; font-family: var(--sans); }
+.tick-item .sep { color: var(--ink-3); }
+
+/* ============================================================
+   PROCESS (editorial numbered)
+   ============================================================ */
+.steps { display: grid; gap: 0; }
+.step { display: grid; grid-template-columns: auto 1fr; gap: 2rem; padding: 2rem 0; border-top: 1px solid var(--line); align-items: start; }
+.steps .step:last-child { border-bottom: 1px solid var(--line); }
+.step .sn { font-family: var(--serif); font-size: clamp(2.5rem, 6vw, 4rem); line-height: 0.9; color: var(--clay); }
+.step h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); margin-bottom: 0.5rem; }
+.step p { color: var(--ink-2); max-width: 52ch; }
+
+/* ============================================================
+   BONUSES
+   ============================================================ */
+.bonus-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.bonus { display: grid; grid-template-columns: auto 1fr auto; gap: 1.1rem; align-items: center; padding: 1.5rem; border-radius: var(--r-md); background: var(--card); border: 1px solid var(--line); transition: transform 0.55s var(--ease-spring), box-shadow 0.5s var(--ease-soft); }
+.bonus:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.bonus .bi { width: 3rem; height: 3rem; border-radius: 50%; display: grid; place-items: center; background: var(--paper-2); color: var(--sage); flex: none; }
+.bonus h3 { font-size: 1.1rem; }
+.bonus p { color: var(--ink-2); font-size: 0.88rem; }
+.bonus .bv { font-family: var(--serif); color: var(--clay); white-space: nowrap; }
+
+/* ============================================================
+   TESTIMONIALS (editorial quote cards)
+   ============================================================ */
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.quote { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); padding: 1.9rem; box-shadow: var(--shadow-sm); }
+.quote .mark { font-family: var(--serif); font-size: 3rem; line-height: 0.6; color: var(--clay); }
+.quote p { font-family: var(--serif); font-size: 1.1rem; line-height: 1.45; margin: 0.75rem 0 1.5rem; }
+.quote .who { display: flex; align-items: center; gap: 0.75rem; }
+.quote .who .av { width: 2.4rem; height: 2.4rem; border-radius: 50%; display: grid; place-items: center; font-weight: 700; background: var(--sage); color: var(--paper); }
+.quote .who .nm { font-weight: 600; font-size: 0.92rem; }
+.quote .who .ci { font-size: 0.78rem; color: var(--ink-3); }
+
+/* ============================================================
+   GUARANTEE / COMPAT
+   ============================================================ */
+.seal-row { display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: center; }
+.seal {
+  width: 7rem; height: 7rem; border-radius: 50%; flex: none;
+  display: grid; place-items: center; text-align: center;
+  border: 2px solid var(--gold); color: var(--gold);
+  font-family: var(--serif); font-size: 0.7rem; line-height: 1.1; text-transform: uppercase; letter-spacing: 0.1em;
+}
+.compat { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.compat .b { padding: 0.55rem 1.1rem; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-size: 0.88rem; font-weight: 500; }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq { display: grid; gap: 0; }
+.faq details { border-top: 1px solid var(--line); }
+.faq .faq:last-child, .faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary {
+  list-style: none; cursor: pointer; padding: 1.5rem 0.25rem;
+  display: flex; justify-content: space-between; gap: 1.5rem; align-items: center;
+  font-family: var(--serif); font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .pm { flex: none; color: var(--clay); transition: transform 0.4s var(--ease-spring); }
+.faq details[open] summary .pm { transform: rotate(45deg); }
+.faq .ans { padding: 0 0.25rem 1.6rem; color: var(--ink-2); max-width: 70ch; }
+.faq .ans strong { color: var(--ink); }
+
+/* — Urgency note — */
+.urgency { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; justify-content: center;
+  padding: 0.9rem 1.5rem; border-radius: 999px; border: 1px solid var(--clay); color: var(--clay); background: rgba(182, 90, 54, 0.06); font-size: 0.92rem; }
+.urgency .slots { font-family: var(--serif); font-size: 1.2rem; }

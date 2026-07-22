@@ -1,0 +1,28 @@
+# Evolution API local — WhatsApp para Vera.
+# Se fija v1.7.4: corre standalone con almacenamiento en archivo (sin Postgres/Redis),
+# ideal para un MVP local de costo $0. (La etiqueta :latest es v2 y exige base de datos.)
+services:
+  evolution-api:
+    image: atendai/evolution-api:v1.7.4
+    container_name: vera-evolution
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - AUTHENTICATION_API_KEY=${EVOLUTION_API_KEY:-cambia-esta-clave}
+      - AUTHENTICATION_TYPE=apikey
+      - DEL_INSTANCE=false
+      - QRCODE_LIMIT=10
+      - CONFIG_SESSION_PHONE_CLIENT=Vera
+      - CONFIG_SESSION_PHONE_NAME=Chrome
+      - LOG_LEVEL=ERROR
+      # Almacenamiento local en archivo (sin base de datos externa)
+      - DATABASE_ENABLED=false
+      - REDIS_ENABLED=false
+    volumes:
+      - evolution_instances:/evolution/instances
+      - evolution_store:/evolution/store
+
+volumes:
+  evolution_instances:
+  evolution_store:

@@ -1,0 +1,101 @@
+
+> vera-webleads@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+  - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 3.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 5.8s (521 modules)
+ GET / 200 in 6204ms
+ GET / 200 in 51ms
+ GET / 200 in 79ms
+ ○ Compiling /scraper ...
+ ✓ Compiled /scraper in 719ms (527 modules)
+ ○ Compiling /inbox ...
+ ✓ Compiled /inbox in 655ms (520 modules)
+ ○ Compiling /api/leads/[id] ...
+ ✓ Compiled /api/leads/[id] in 543ms (296 modules)
+ GET /api/leads/25 200 in 1462ms
+ GET /api/leads/25 200 in 44ms
+ ✓ Compiled /whatsapp in 429ms (556 modules)
+ ○ Compiling /api/whatsapp ...
+ ✓ Compiled /api/whatsapp in 565ms (304 modules)
+ ✓ Compiled (307 modules)
+ GET /api/whatsapp 200 in 1288ms
+ GET /api/whatsapp 200 in 1301ms
+ GET /api/whatsapp/qr 200 in 1310ms
+ GET /api/whatsapp/qr 200 in 1317ms
+ ✓ Compiled /seguimientos in 385ms (571 modules)
+ ✓ Compiled /leads/[id] in 469ms (583 modules)
+ GET /api/whatsapp 200 in 117ms
+ GET /api/whatsapp 200 in 44ms
+ ✓ Compiled /api/demo in 352ms (328 modules)
+ POST /api/demo 200 in 3357ms
+ ✓ Compiled in 1094ms (546 modules)
+ ✓ Compiled in 699ms (546 modules)
+ ✓ Compiled in 625ms (546 modules)
+ ✓ Compiled in 567ms (546 modules)
+ GET /leads/13 200 in 173ms
+ GET /leads/5 200 in 88ms
+ ○ Compiling /api/whatsapp ...
+ ✓ Compiled /api/whatsapp in 574ms (304 modules)
+ GET /api/whatsapp 200 in 712ms
+ GET /api/whatsapp 200 in 31ms
+ ✓ Compiled in 751ms (272 modules)
+ ✓ Compiled /api/demo in 437ms (306 modules)
+ POST /api/demo 200 in 605ms
+ ✓ Compiled /api/leads in 273ms (302 modules)
+ GET /api/leads?categoria=estetica 200 in 340ms
+ GET /api/leads 200 in 26ms
+ GET /api/leads 200 in 22ms
+ ✓ Compiled /api/demo in 236ms (308 modules)
+ POST /api/demo 200 in 320ms
+ POST /api/demo 200 in 4506ms
+ GET /leads/5 200 in 401ms
+ ✓ Compiled /api/whatsapp in 303ms (309 modules)
+ GET /api/whatsapp 200 in 471ms
+ GET /api/whatsapp 200 in 55ms
+ POST /api/demo 200 in 29ms
+ POST /api/demo 200 in 23ms
+ POST /api/demo 200 in 3727ms
+ POST /api/demo 200 in 58ms
+ POST /api/demo 200 in 28ms
+ POST /api/demo 200 in 25ms
+ POST /api/demo 200 in 3635ms
+ ✓ Compiled in 522ms (272 modules)
+ ✓ Compiled /api/demo in 491ms (306 modules)
+ POST /api/demo 200 in 728ms
+ POST /api/demo 200 in 27ms
+ ✓ Compiled in 284ms (306 modules)
+ ✓ Compiled in 191ms (306 modules)
+ ✓ Compiled in 187ms (272 modules)
+ ✓ Compiled /api/demo in 185ms (306 modules)
+ POST /api/demo 200 in 303ms
+ POST /api/demo 200 in 27ms
+ ✓ Compiled in 237ms (272 modules)
+ ✓ Compiled /api/demo in 177ms (306 modules)
+ POST /api/demo 200 in 289ms
+ POST /api/demo 200 in 23ms
+ POST /api/demo 200 in 2918ms
+ GET /leads/5 200 in 196ms
+ ✓ Compiled /api/whatsapp in 494ms (309 modules)
+ GET /api/whatsapp 200 in 663ms
+ GET /api/whatsapp 200 in 35ms
+ POST /api/whatsapp 200 in 3844ms
+ ✓ Compiled in 204ms (272 modules)
+ ✓ Compiled /api/demo in 263ms (306 modules)
+ POST /api/demo 200 in 382ms
+ POST /api/demo 200 in 21ms
+ ✓ Compiled in 218ms (272 modules)
+ ✓ Compiled /api/demo in 235ms (306 modules)
+ POST /api/demo 200 in 358ms
+ POST /api/demo 200 in 23ms
+ POST /api/demo 200 in 24ms
+ GET /leads/5 200 in 264ms
+ ✓ Compiled /api/whatsapp in 393ms (304 modules)
+ GET /api/whatsapp 200 in 538ms
+ GET /api/whatsapp 200 in 51ms

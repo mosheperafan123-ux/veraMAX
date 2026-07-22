@@ -1,0 +1,15 @@
+{
+  "name": "oculus-masters-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing page de Oculus Masters — oferta irresistible (metodología Alex Hormozi / $100M Offers) para el catálogo VR de Meta Quest en Colombia.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  }
+}

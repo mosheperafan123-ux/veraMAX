@@ -1,0 +1,158 @@
+/* ============================================================
+   BASE · Design tokens, reset, typography, paper texture
+   Vibe Archetype: "Editorial Luxury"
+   Warm cream paper · high-contrast variable serif · film grain
+   ============================================================ */
+
+:root {
+  /* — Paper & surfaces — */
+  --paper: #FAF6EF;          /* warm cream background */
+  --paper-2: #F1E9DB;        /* deeper cream panel */
+  --card: #FFFDF8;           /* near-white card */
+  --line: rgba(36, 28, 21, 0.14);
+  --line-soft: rgba(36, 28, 21, 0.07);
+
+  /* — Ink / text — */
+  --ink: #211B15;            /* espresso near-black */
+  --ink-2: #6E6357;          /* muted brown-grey */
+  --ink-3: #9C9286;          /* faint */
+
+  /* — Accents — */
+  --clay: #B65A36;           /* terracotta (primary accent) */
+  --clay-deep: #97431F;
+  --sage: #6E7A5A;           /* muted sage (secondary) */
+  --gold: #A4824B;           /* premium gold */
+
+  /* — Shadows (soft, diffused — never harsh) — */
+  --shadow-sm: 0 14px 30px -18px rgba(58, 40, 26, 0.25);
+  --shadow-md: 0 34px 70px -34px rgba(58, 40, 26, 0.30);
+  --shadow-lg: 0 60px 120px -50px rgba(58, 40, 26, 0.38);
+
+  /* — Radii — */
+  --r-lg: 1.75rem;
+  --r-md: 1.15rem;
+  --r-sm: 0.7rem;
+
+  /* — Motion — */
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* — Type — */
+  --serif: "Zodiak", "PP Editorial New", Georgia, serif;
+  --sans: "General Sans", system-ui, -apple-system, sans-serif;
+
+  --maxw: 1240px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul { list-style: none; }
+em { font-style: italic; }
+
+::selection { background: var(--clay); color: var(--paper); }
+
+/* — Warm ambient washes (subtle, not neon) — */
+.bg-wash {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 50rem at 8% -10%, rgba(110, 122, 90, 0.10), transparent 55%),
+    radial-gradient(55rem 45rem at 100% 8%, rgba(182, 90, 54, 0.08), transparent 55%),
+    radial-gradient(50rem 50rem at 50% 120%, rgba(164, 130, 75, 0.07), transparent 60%);
+}
+
+/* — Film grain overlay (darkens slightly on cream → physical paper) — */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* — Layout helpers — */
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 1.75rem; }
+.section { padding-block: clamp(5rem, 11vw, 8.5rem); }
+
+.rule { height: 1px; background: var(--line); width: 100%; }
+.rule-wrap { max-width: var(--maxw); margin: 0 auto; }
+
+/* — Editorial kicker (numbered eyebrow) — */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--clay);
+}
+.kicker .num { font-variant-numeric: tabular-nums; color: var(--ink-3); }
+.kicker::before {
+  content: "";
+  width: 1.75rem; height: 1px; background: var(--clay);
+  display: inline-block;
+}
+
+/* — Display heading scale — */
+.display {
+  font-size: clamp(2.6rem, 7vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+.h-xl { font-size: clamp(2.2rem, 5.2vw, 3.6rem); line-height: 1.02; }
+.h-lg { font-size: clamp(1.7rem, 3.6vw, 2.5rem); }
+.lead { font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--ink-2); max-width: 56ch; line-height: 1.55; }
+.muted { color: var(--ink-2); }
+.serif-italic { font-family: var(--serif); font-style: italic; font-weight: 400; }
+
+/* — Reveal primitive — */
+.reveal {
+  opacity: 0;
+  transform: translateY(2rem);
+  filter: blur(4px);
+  transition: opacity 0.95s var(--ease-soft), transform 0.95s var(--ease-soft), filter 0.95s var(--ease-soft);
+  will-change: transform, opacity;
+}
+.reveal.in { opacity: 1; transform: translateY(0); filter: blur(0); }
+.d1 { transition-delay: 0.08s; }
+.d2 { transition-delay: 0.16s; }
+.d3 { transition-delay: 0.24s; }
+.d4 { transition-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+}

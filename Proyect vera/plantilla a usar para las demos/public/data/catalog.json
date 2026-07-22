@@ -1,0 +1,829 @@
+{
+  "generated_from": "Rookie Sideloader catalog + data.js",
+  "categories": [
+    {
+      "name": "Casual y Otros",
+      "count": 1612,
+      "value_usd": 29079,
+      "size_gb": 2511.2,
+      "top": [
+        {
+          "name": "The Boys",
+          "rating": 10000,
+          "price": 29.99,
+          "size_mb": 2986
+        },
+        {
+          "name": "Table Space",
+          "rating": 9996,
+          "price": 14.99,
+          "size_mb": 651
+        },
+        {
+          "name": "Legendary Tales",
+          "rating": 9974,
+          "price": 39.99,
+          "size_mb": 6005
+        },
+        {
+          "name": "A Black Climbing Dog",
+          "rating": 9971,
+          "price": 14.99,
+          "size_mb": 561
+        },
+        {
+          "name": "SOUL RETREAT- Meditate & Relax in Nature",
+          "rating": 9967,
+          "price": 29.99,
+          "size_mb": 2409
+        },
+        {
+          "name": "Spaceframe",
+          "rating": 9963,
+          "price": 14.99,
+          "size_mb": 399
+        },
+        {
+          "name": "MR. TRAVELER",
+          "rating": 9960,
+          "price": 9.99,
+          "size_mb": 0
+        },
+        {
+          "name": "Split Second",
+          "rating": 9949,
+          "price": 29.99,
+          "size_mb": 4055
+        }
+      ]
+    },
+    {
+      "name": "Acción y Disparos",
+      "count": 204,
+      "value_usd": 3873,
+      "size_gb": 326.1,
+      "top": [
+        {
+          "name": "Kaiju Battle Simulator",
+          "rating": 9978,
+          "price": 14.99,
+          "size_mb": 597
+        },
+        {
+          "name": "Clay Hunt VR",
+          "rating": 9956,
+          "price": 19.99,
+          "size_mb": 997
+        },
+        {
+          "name": "Warplanes- Battles over Pacific",
+          "rating": 9868,
+          "price": 14.99,
+          "size_mb": 522
+        },
+        {
+          "name": "Warplanes- WW1 Fighters",
+          "rating": 9864,
+          "price": 19.99,
+          "size_mb": 1798
+        },
+        {
+          "name": "Haymaker",
+          "rating": 9824,
+          "price": 14.99,
+          "size_mb": 625
+        },
+        {
+          "name": "Blade & Sorcery- Nomad",
+          "rating": 9794,
+          "price": 39.99,
+          "size_mb": 6021
+        },
+        {
+          "name": "Orcs Must Die- By The Blade",
+          "rating": 9772,
+          "price": 29.99,
+          "size_mb": 4695
+        },
+        {
+          "name": "Battle Talent (MR-Fix)",
+          "rating": 9699,
+          "price": 29.99,
+          "size_mb": 2331
+        }
+      ]
+    },
+    {
+      "name": "RPG y Aventura",
+      "count": 150,
+      "value_usd": 2719,
+      "size_gb": 224.9,
+      "top": [
+        {
+          "name": "Daedalus",
+          "rating": 9985,
+          "price": 19.99,
+          "size_mb": 908
+        },
+        {
+          "name": "EarthQuest",
+          "rating": 9820,
+          "price": 19.99,
+          "size_mb": 962
+        },
+        {
+          "name": "Virtual Desktop",
+          "rating": 9665,
+          "price": 19.99,
+          "size_mb": 1008
+        },
+        {
+          "name": "Dragon Fist- VR Kung Fu",
+          "rating": 9599,
+          "price": 29.99,
+          "size_mb": 3768
+        },
+        {
+          "name": "Ancient Dungeon",
+          "rating": 9551,
+          "price": 9.99,
+          "size_mb": 271
+        },
+        {
+          "name": "Hide The Corpse",
+          "rating": 9548,
+          "price": 14.99,
+          "size_mb": 752
+        },
+        {
+          "name": "Virtual Desktop",
+          "rating": 9511,
+          "price": 19.99,
+          "size_mb": 1005
+        },
+        {
+          "name": "Beat Saber (Quest 1)",
+          "rating": 9445,
+          "price": 29.99,
+          "size_mb": 3941
+        }
+      ]
+    },
+    {
+      "name": "Simulación",
+      "count": 129,
+      "value_usd": 2094,
+      "size_gb": 130.1,
+      "top": [
+        {
+          "name": "Game Dev Simulator",
+          "rating": 9882,
+          "price": 19.99,
+          "size_mb": 1087
+        },
+        {
+          "name": "Job Simulator",
+          "rating": 9735,
+          "price": 19.99,
+          "size_mb": 1005
+        },
+        {
+          "name": "NightClub Simulator VR",
+          "rating": 9728,
+          "price": 29.99,
+          "size_mb": 2892
+        },
+        {
+          "name": "Barbershop Simulator VR",
+          "rating": 9566,
+          "price": 19.99,
+          "size_mb": 981
+        },
+        {
+          "name": "Skydive Sim",
+          "rating": 9555,
+          "price": 29.99,
+          "size_mb": 3317
+        },
+        {
+          "name": "Cooking Simulator VR",
+          "rating": 9496,
+          "price": 29.99,
+          "size_mb": 3776
+        },
+        {
+          "name": "Glider Sim- Earth Online",
+          "rating": 9449,
+          "price": 29.99,
+          "size_mb": 4261
+        },
+        {
+          "name": "FlyMe",
+          "rating": 9430,
+          "price": 14.99,
+          "size_mb": 514
+        }
+      ]
+    },
+    {
+      "name": "Puzles y Lógica",
+      "count": 117,
+      "value_usd": 1794,
+      "size_gb": 102.5,
+      "top": [
+        {
+          "name": "Parking Out",
+          "rating": 9989,
+          "price": 14.99,
+          "size_mb": 632
+        },
+        {
+          "name": "AI Roommate",
+          "rating": 9934,
+          "price": 19.99,
+          "size_mb": 1945
+        },
+        {
+          "name": "Cosmic XR - Space In Your Room",
+          "rating": 9570,
+          "price": 14.99,
+          "size_mb": 651
+        },
+        {
+          "name": "Escape Simulator",
+          "rating": 9529,
+          "price": 39.99,
+          "size_mb": 25805
+        },
+        {
+          "name": "Living Room (MR-Fix)",
+          "rating": 9103,
+          "price": 9.99,
+          "size_mb": 253
+        },
+        {
+          "name": "The Room VR- A Dark Matter",
+          "rating": 9096,
+          "price": 29.99,
+          "size_mb": 2238
+        },
+        {
+          "name": "Magic Color Merge Puzzle",
+          "rating": 8776,
+          "price": 9.99,
+          "size_mb": 296
+        },
+        {
+          "name": "Escape-The Nought",
+          "rating": 8397,
+          "price": 19.99,
+          "size_mb": 832
+        }
+      ]
+    },
+    {
+      "name": "Carreras",
+      "count": 101,
+      "value_usd": 1659,
+      "size_gb": 112.3,
+      "top": [
+        {
+          "name": "VRacer Hoverbike",
+          "rating": 9982,
+          "price": 29.99,
+          "size_mb": 3777
+        },
+        {
+          "name": "Off Track VR",
+          "rating": 9816,
+          "price": 29.99,
+          "size_mb": 3071
+        },
+        {
+          "name": "RACECLUB",
+          "rating": 9662,
+          "price": 19.99,
+          "size_mb": 1708
+        },
+        {
+          "name": "ArtQuest VR",
+          "rating": 9382,
+          "price": 14.99,
+          "size_mb": 403
+        },
+        {
+          "name": "TAXI DRIVER VR",
+          "rating": 9353,
+          "price": 14.99,
+          "size_mb": 380
+        },
+        {
+          "name": "VZfit with Ring Racer",
+          "rating": 9298,
+          "price": 19.99,
+          "size_mb": 1078
+        },
+        {
+          "name": "Car Mechanic Simulator",
+          "rating": 9022,
+          "price": 19.99,
+          "size_mb": 1737
+        },
+        {
+          "name": "SketchAR- Drawing, Tracing, Mural art",
+          "rating": 9015,
+          "price": 9.99,
+          "size_mb": 105
+        }
+      ]
+    },
+    {
+      "name": "Deportes",
+      "count": 97,
+      "value_usd": 1589,
+      "size_gb": 132.4,
+      "top": [
+        {
+          "name": "Hoopzter Basketball",
+          "rating": 9993,
+          "price": 19.99,
+          "size_mb": 1615
+        },
+        {
+          "name": "Premier League Player Football",
+          "rating": 9945,
+          "price": 29.99,
+          "size_mb": 4588
+        },
+        {
+          "name": "Hoopzter Basketball (MR-Fix)",
+          "rating": 9912,
+          "price": 19.99,
+          "size_mb": 1615
+        },
+        {
+          "name": "DuckOrDie- Boxing Minigame",
+          "rating": 9842,
+          "price": 9.99,
+          "size_mb": 283
+        },
+        {
+          "name": "Fruit Golf",
+          "rating": 9827,
+          "price": 19.99,
+          "size_mb": 1928
+        },
+        {
+          "name": "Eleven Table Tennis",
+          "rating": 9798,
+          "price": 14.99,
+          "size_mb": 718
+        },
+        {
+          "name": "Walkabout Mini Golf",
+          "rating": 9746,
+          "price": 39.99,
+          "size_mb": 13737
+        },
+        {
+          "name": "GOLF+",
+          "rating": 9669,
+          "price": 39.99,
+          "size_mb": 23737
+        }
+      ]
+    },
+    {
+      "name": "Terror",
+      "count": 82,
+      "value_usd": 1554,
+      "size_gb": 168.7,
+      "top": [
+        {
+          "name": "Little Nightmares VR- Altered Echoes",
+          "rating": 9871,
+          "price": 39.99,
+          "size_mb": 8361
+        },
+        {
+          "name": "Marvels Deadpool VR (English Only)",
+          "rating": 9776,
+          "price": 39.99,
+          "size_mb": 34295
+        },
+        {
+          "name": "The Exorcist- Legion VR",
+          "rating": 9710,
+          "price": 29.99,
+          "size_mb": 2408
+        },
+        {
+          "name": "The Walking Dead- Saints & Sinners",
+          "rating": 9702,
+          "price": 39.99,
+          "size_mb": 7931
+        },
+        {
+          "name": "The Walking Dead- Saints & Sinners - Chapter 2- Retribution",
+          "rating": 9393,
+          "price": 39.99,
+          "size_mb": 13360
+        },
+        {
+          "name": "Spatial Zombies Pro - Mixed Reality (MR-Fix)",
+          "rating": 9165,
+          "price": 19.99,
+          "size_mb": 937
+        },
+        {
+          "name": "Death Game Hotel",
+          "rating": 9037,
+          "price": 29.99,
+          "size_mb": 3119
+        },
+        {
+          "name": "Drop Dead- The Cabin (MR-Fix)",
+          "rating": 9004,
+          "price": 29.99,
+          "size_mb": 2847
+        }
+      ]
+    },
+    {
+      "name": "Música y Ritmo",
+      "count": 72,
+      "value_usd": 1344,
+      "size_gb": 141.5,
+      "top": [
+        {
+          "name": "Beat Saber",
+          "rating": 9801,
+          "price": 39.99,
+          "size_mb": 5197
+        },
+        {
+          "name": "Beat Saber (Multi Install)",
+          "rating": 9790,
+          "price": 39.99,
+          "size_mb": 5197
+        },
+        {
+          "name": "Synth Riders (MR-Fix)",
+          "rating": 9765,
+          "price": 29.99,
+          "size_mb": 3416
+        },
+        {
+          "name": "Beat Saber - Age Verification Save Patch",
+          "rating": 9761,
+          "price": 0,
+          "size_mb": 0
+        },
+        {
+          "name": "Beat Saber - Explicit Content Unlock",
+          "rating": 9761,
+          "price": 9.99,
+          "size_mb": 0
+        },
+        {
+          "name": "Drums Rock",
+          "rating": 9732,
+          "price": 29.99,
+          "size_mb": 3255
+        },
+        {
+          "name": "Smash Drums (MR-Fix)",
+          "rating": 9688,
+          "price": 29.99,
+          "size_mb": 2245
+        },
+        {
+          "name": "BEATABLE",
+          "rating": 9680,
+          "price": 14.99,
+          "size_mb": 627
+        }
+      ]
+    },
+    {
+      "name": "Adultos (18+)",
+      "count": 70,
+      "value_usd": 1109,
+      "size_gb": 57.3,
+      "top": [
+        {
+          "name": "Captain Hardcore (18+)",
+          "rating": 9743,
+          "price": 29.99,
+          "size_mb": 4356
+        },
+        {
+          "name": "Captain Hardcore (18+)",
+          "rating": 9743,
+          "price": 29.99,
+          "size_mb": 4727
+        },
+        {
+          "name": "First Taste VR (18+)",
+          "rating": 9625,
+          "price": 19.99,
+          "size_mb": 1766
+        },
+        {
+          "name": "VR HOT (18+)",
+          "rating": 9607,
+          "price": 29.99,
+          "size_mb": 2454
+        },
+        {
+          "name": "ComeCloser (18+)",
+          "rating": 9603,
+          "price": 19.99,
+          "size_mb": 1025
+        },
+        {
+          "name": "AFGirlfriend MR (18+)",
+          "rating": 9500,
+          "price": 19.99,
+          "size_mb": 1121
+        },
+        {
+          "name": "EdenXVerse VR (18+)",
+          "rating": 9482,
+          "price": 19.99,
+          "size_mb": 1022
+        },
+        {
+          "name": "Nudist College (18+)",
+          "rating": 9478,
+          "price": 19.99,
+          "size_mb": 1029
+        }
+      ]
+    },
+    {
+      "name": "Utilidades",
+      "count": 47,
+      "value_usd": 770,
+      "size_gb": 36.8,
+      "top": [
+        {
+          "name": "Moon VR Video Player",
+          "rating": 9952,
+          "price": 14.99,
+          "size_mb": 619
+        },
+        {
+          "name": "NEX - NEXt-Gen Video Player",
+          "rating": 9919,
+          "price": 19.99,
+          "size_mb": 806
+        },
+        {
+          "name": "Moon VR Video Player (MR-Fix)",
+          "rating": 9904,
+          "price": 14.99,
+          "size_mb": 619
+        },
+        {
+          "name": "Mindway - Mindfulness Meditation, Sleep, ASMR",
+          "rating": 9897,
+          "price": 19.99,
+          "size_mb": 838
+        },
+        {
+          "name": "OnBoard Chess",
+          "rating": 9809,
+          "price": 19.99,
+          "size_mb": 931
+        },
+        {
+          "name": "4XVR Video Player (Pro + Trial Bypass)",
+          "rating": 9577,
+          "price": 14.99,
+          "size_mb": 337
+        },
+        {
+          "name": "SKYBOX VR Video Player",
+          "rating": 9404,
+          "price": 9.99,
+          "size_mb": 207
+        },
+        {
+          "name": "PianoVision",
+          "rating": 9169,
+          "price": 29.99,
+          "size_mb": 2561
+        }
+      ]
+    },
+    {
+      "name": "Fitness",
+      "count": 41,
+      "value_usd": 760,
+      "size_gb": 49,
+      "top": [
+        {
+          "name": "Cursed Echoes",
+          "rating": 9522,
+          "price": 29.99,
+          "size_mb": 2591
+        },
+        {
+          "name": "XRWorkout",
+          "rating": 9290,
+          "price": 29.99,
+          "size_mb": 2654
+        },
+        {
+          "name": "Monsters and Mazes",
+          "rating": 9074,
+          "price": 19.99,
+          "size_mb": 1329
+        },
+        {
+          "name": "Fitness One XR Evolved",
+          "rating": 8702,
+          "price": 19.99,
+          "size_mb": 1479
+        },
+        {
+          "name": "Kingspray Graffiti",
+          "rating": 8581,
+          "price": 19.99,
+          "size_mb": 1366
+        },
+        {
+          "name": "Fitness Fables",
+          "rating": 8371,
+          "price": 29.99,
+          "size_mb": 4179
+        },
+        {
+          "name": "PUNCH FIT",
+          "rating": 8290,
+          "price": 19.99,
+          "size_mb": 1048
+        },
+        {
+          "name": "xFIT",
+          "rating": 8276,
+          "price": 19.99,
+          "size_mb": 1994
+        }
+      ]
+    }
+  ],
+  "top_games": [
+    {
+      "name": "The Boys",
+      "rating": 10000,
+      "category": "Casual y Otros",
+      "price": 29.99
+    },
+    {
+      "name": "Table Space",
+      "rating": 9996,
+      "category": "Casual y Otros",
+      "price": 14.99
+    },
+    {
+      "name": "Hoopzter Basketball",
+      "rating": 9993,
+      "category": "Deportes",
+      "price": 19.99
+    },
+    {
+      "name": "Parking Out",
+      "rating": 9989,
+      "category": "Puzles y Lógica",
+      "price": 14.99
+    },
+    {
+      "name": "Daedalus",
+      "rating": 9985,
+      "category": "RPG y Aventura",
+      "price": 19.99
+    },
+    {
+      "name": "VRacer Hoverbike",
+      "rating": 9982,
+      "category": "Carreras",
+      "price": 29.99
+    },
+    {
+      "name": "Kaiju Battle Simulator",
+      "rating": 9978,
+      "category": "Acción y Disparos",
+      "price": 14.99
+    },
+    {
+      "name": "Legendary Tales",
+      "rating": 9974,
+      "category": "Casual y Otros",
+      "price": 39.99
+    },
+    {
+      "name": "A Black Climbing Dog",
+      "rating": 9971,
+      "category": "Casual y Otros",
+      "price": 14.99
+    },
+    {
+      "name": "SOUL RETREAT- Meditate & Relax in Nature",
+      "rating": 9967,
+      "category": "Casual y Otros",
+      "price": 29.99
+    },
+    {
+      "name": "Spaceframe",
+      "rating": 9963,
+      "category": "Casual y Otros",
+      "price": 14.99
+    },
+    {
+      "name": "MR. TRAVELER",
+      "rating": 9960,
+      "category": "Casual y Otros",
+      "price": 9.99
+    },
+    {
+      "name": "Clay Hunt VR",
+      "rating": 9956,
+      "category": "Acción y Disparos",
+      "price": 19.99
+    },
+    {
+      "name": "Moon VR Video Player",
+      "rating": 9952,
+      "category": "Utilidades",
+      "price": 14.99
+    },
+    {
+      "name": "Split Second",
+      "rating": 9949,
+      "category": "Casual y Otros",
+      "price": 29.99
+    },
+    {
+      "name": "Premier League Player Football",
+      "rating": 9945,
+      "category": "Deportes",
+      "price": 29.99
+    },
+    {
+      "name": "Sail",
+      "rating": 9941,
+      "category": "Casual y Otros",
+      "price": 19.99
+    },
+    {
+      "name": "Last Stand",
+      "rating": 9938,
+      "category": "Casual y Otros",
+      "price": 0
+    },
+    {
+      "name": "AI Roommate",
+      "rating": 9934,
+      "category": "Puzles y Lógica",
+      "price": 19.99
+    },
+    {
+      "name": "Retropolis 2- Never Say Goodbye",
+      "rating": 9930,
+      "category": "Casual y Otros",
+      "price": 29.99
+    },
+    {
+      "name": "Save The Cat - Plank Rescue Experience",
+      "rating": 9926,
+      "category": "Casual y Otros",
+      "price": 14.99
+    },
+    {
+      "name": "Dimensional Double Shift",
+      "rating": 9923,
+      "category": "Casual y Otros",
+      "price": 29.99
+    },
+    {
+      "name": "NEX - NEXt-Gen Video Player",
+      "rating": 9919,
+      "category": "Utilidades",
+      "price": 19.99
+    },
+    {
+      "name": "I Am Cat",
+      "rating": 9915,
+      "category": "Casual y Otros",
+      "price": 29.99
+    }
+  ],
+  "totals": {
+    "games": 2722,
+    "categories": 12,
+    "value_usd": 48343,
+    "size_gb": 3992.9
+  }
+}

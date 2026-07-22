@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#FAF6EF" />
+  <!-- Marca JS ANTES de pintar: sin JS el contenido se ve igual (nunca en blanco). -->
+  <script>document.documentElement.className = 'js';</script>
+  <title>{{NOMBRE}} — {{CAT_LABEL}} en {{CIUDAD}}</title>
+  <meta name="description" content="{{NOMBRE}}, {{CAT_LABEL}} en {{CIUDAD}}. {{HERO_LEAD_PLAIN}} Agenda tu cita por WhatsApp." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph + Twitter + canonical: preview rico al compartir el link (WhatsApp, redes) -->
+  {{SOCIAL_META}}
+
+  <!-- Favicon generado (inicial + color de la marca, sin archivo externo) -->
+  <link rel="icon" href="{{FAVICON_HREF}}" />
+  <link rel="apple-touch-icon" href="{{FAVICON_HREF}}" />
+
+  <!-- Datos estructurados para Google (rich results / negocio local) -->
+  <script type="application/ld+json">{{JSONLD}}</script>
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <!-- Imágenes (hero con fetchpriority alta): preconectar acelera el LCP -->
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       Demo "Editorial Luxury" generado por Vera
+       Papel crema cálido · serif de alto contraste · grano de película
+       Acento por categoría inyectado en {{ACENTO}}
+       ============================================================ */
+    :root {
+      --paper: #FAF6EF; --paper-2: #F1E9DB; --card: #FFFDF8;
+      --line: rgba(36,28,21,0.14); --line-soft: rgba(36,28,21,0.07);
+      --ink: #211B15; --ink-2: #6E6357; --ink-3: #7A6F61; /* #7A6F61 cumple WCAG AA 4.5:1 sobre el papel (axe) sin perder el tono apagado */
+      --accent: {{ACENTO}}; --accent-deep: {{ACENTO_DEEP}};
+      --gold: #A4824B; --whatsapp: #1f7a4d;
+      --shadow-sm: 0 14px 30px -18px rgba(58,40,26,0.25);
+      --shadow-md: 0 34px 70px -34px rgba(58,40,26,0.30);
+      --shadow-lg: 0 60px 120px -50px rgba(58,40,26,0.38);
+      --r-lg: 1.75rem; --r-md: 1.15rem; --r-sm: 0.7rem;
+      --ease-spring: cubic-bezier(0.32,0.72,0,1); --ease-soft: cubic-bezier(0.22,1,0.36,1);
+      --serif: "Zodiak","PP Editorial New",Georgia,serif;
+      --sans: "General Sans",system-ui,-apple-system,sans-serif;
+      --maxw: 1240px;
+    }
+    *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 1rem; line-height: 1.65; letter-spacing: -0.005em; overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    h1,h2,h3,h4 { font-family: var(--serif); font-weight: 500; line-height: 1.02; letter-spacing: -0.02em; color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    em { font-style: italic; }
+    ::selection { background: var(--accent); color: var(--paper); }
+    /* Accesibilidad: foco visible al navegar con teclado (no solo en hover) */
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    a:focus-visible, .btn:focus-visible, .btn-line:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+    .bg-wash { position: fixed; inset: 0; z-index: -2; pointer-events: none;
+      background:
+        radial-gradient(60rem 50rem at 8% -10%, rgba(110,122,90,0.10), transparent 55%),
+        radial-gradient(55rem 45rem at 100% 8%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 55%),
+        radial-gradient(50rem 50rem at 50% 120%, rgba(164,130,75,0.07), transparent 60%); }
+    .grain { position: fixed; inset: 0; z-index: 80; pointer-events: none; opacity: 0.045; mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+    .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 1.75rem; }
+    .section { padding-block: clamp(4.5rem, 10vw, 8rem); }
+    .rule { height: 1px; background: var(--line); width: 100%; }
+    .rule-wrap { max-width: var(--maxw); margin: 0 auto; }
+
+    .kicker { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.24em; color: var(--accent); }
+    .kicker .num { font-variant-numeric: tabular-nums; color: var(--ink-3); }
+    .kicker::before { content: ""; width: 1.75rem; height: 1px; background: var(--accent); display: inline-block; }
+
+    .display { font-size: clamp(2.6rem,7vw,5.25rem); line-height: 0.98; letter-spacing: -0.03em; }
+    .h-xl { font-size: clamp(2.2rem,5.2vw,3.6rem); line-height: 1.02; }
+    .h-lg { font-size: clamp(1.7rem,3.6vw,2.5rem); }
+    .lead { font-size: clamp(1.05rem,2vw,1.3rem); color: var(--ink-2); max-width: 56ch; line-height: 1.55; }
+    .serif-italic { font-family: var(--serif); font-style: italic; font-weight: 400; }
+
+    /* Progressive enhancement: el contenido es visible por defecto.
+       Solo si hay JS (html.js) se oculta para animar la entrada. */
+    .js .reveal { opacity: 0; transform: translateY(2rem); filter: blur(4px); transition: opacity 0.95s var(--ease-soft), transform 0.95s var(--ease-soft), filter 0.95s var(--ease-soft); will-change: transform, opacity; }
+    .js .reveal.in { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .d1 { transition-delay: 0.08s; } .d2 { transition-delay: 0.16s; } .d3 { transition-delay: 0.24s; }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } .js .reveal { opacity: 1; transform: none; filter: none; transition: none; } .ticker-track { animation: none !important; } .hero-figure img { transition: none !important; } }
+
+    /* Botones */
+    .btn { display: inline-flex; align-items: center; gap: 0.7rem; padding: 0.8rem 0.85rem 0.8rem 1.5rem; border-radius: 999px; font-weight: 600; font-size: 0.98rem; background: var(--ink); color: var(--paper); transition: transform 0.5s var(--ease-spring), box-shadow 0.5s var(--ease-spring), background 0.4s var(--ease-soft); box-shadow: var(--shadow-sm); }
+    .btn .ic { display: grid; place-items: center; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: rgba(250,246,239,0.16); transition: transform 0.5s var(--ease-spring); }
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn:hover .ic { transform: translate(3px,-2px); }
+    .btn:active { transform: scale(0.98); }
+    .btn--accent { background: var(--accent); } .btn--accent:hover { background: var(--accent-deep); }
+    .btn--lg { font-size: 1.08rem; padding: 1rem 1rem 1rem 1.8rem; } .btn--lg .ic { width: 2.2rem; height: 2.2rem; }
+    .btn--whats { background: var(--whatsapp); } .btn--whats:hover { background: #19663f; }
+    .btn-line { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 600; font-size: 0.95rem; padding: 0.7rem 1.25rem; border-radius: 999px; border: 1px solid var(--line); background: transparent; transition: background 0.4s var(--ease-soft), border-color 0.4s var(--ease-soft); }
+    .btn-line:hover { background: var(--paper-2); border-color: var(--ink-3); }
+    .link-underline { display: inline-flex; align-items: center; gap: 0.45rem; font-weight: 600; color: var(--accent); border-bottom: 1px solid currentColor; padding-bottom: 2px; transition: gap 0.4s var(--ease-spring); }
+    .link-underline:hover { gap: 0.75rem; }
+
+    /* Paneles / cards */
+    .panel { background: var(--paper-2); border: 1px solid var(--line-soft); border-radius: var(--r-lg); padding: 0.5rem; box-shadow: var(--shadow-md); }
+    .panel > .panel-in { background: var(--card); border: 1px solid var(--line-soft); border-radius: calc(var(--r-lg) - 0.5rem); padding: clamp(1.75rem,4vw,3.25rem); }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); padding: 1.75rem; transition: transform 0.55s var(--ease-spring), box-shadow 0.5s var(--ease-soft), border-color 0.4s var(--ease-soft); }
+    .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+
+    /* Nav */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; background: rgba(250,246,239,0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line-soft); }
+    .nav-in { max-width: var(--maxw); margin: 0 auto; padding: 0.9rem 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .nav-logo { font-family: var(--serif); font-size: 1.35rem; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: min(55%, 460px); }
+    .nav-logo .dot { color: var(--accent); }
+    .nav-mid { display: flex; gap: 2rem; }
+    .nav-mid a { font-size: 0.9rem; color: var(--ink-2); transition: color 0.3s var(--ease-soft); position: relative; }
+    .nav-mid a::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent); transition: width 0.4s var(--ease-spring); }
+    .nav-mid a:hover { color: var(--ink); } .nav-mid a:hover::after { width: 100%; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .burger { display: none; width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 1px solid var(--line); position: relative; background: var(--card); }
+    .burger .ln { position: absolute; left: 50%; top: 50%; width: 16px; height: 1.5px; background: var(--ink); transition: transform 0.5s var(--ease-spring), opacity 0.3s; }
+    .burger .a { transform: translate(-50%,-5px); } .burger .b { transform: translate(-50%,0); } .burger .c { transform: translate(-50%,5px); }
+    body.nav-open .burger .a { transform: translate(-50%,0) rotate(45deg); }
+    body.nav-open .burger .b { opacity: 0; }
+    body.nav-open .burger .c { transform: translate(-50%,0) rotate(-45deg); }
+    .mmenu { position: fixed; inset: 0; z-index: 85; background: var(--paper); display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.5s var(--ease-soft); }
+    body.nav-open .mmenu { opacity: 1; pointer-events: auto; }
+    .mmenu a { font-family: var(--serif); font-size: 2.2rem; padding: 0.4rem 0; border-bottom: 1px solid var(--line-soft); }
+    .mmenu a.cta { color: var(--accent); border-bottom: none; }
+
+    /* Hero editorial split */
+    .hero { padding-top: 9rem; padding-bottom: 4rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; align-items: center; }
+    .hero-kicker { margin-bottom: 1.75rem; }
+    .hero h1 { margin-bottom: 1.5rem; }
+    .hero h1 .accent { color: var(--accent); font-style: italic; font-weight: 400; }
+    .hero-lead { margin-bottom: 2.25rem; }
+    .hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; }
+    .hero-meta { display: flex; flex-direction: column; line-height: 1.3; font-size: 0.9rem; color: var(--ink-2); }
+    .hero-meta .stars { color: var(--gold); font-size: 1.05rem; letter-spacing: 0.05em; }
+    .hero-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-lg); overflow: hidden; }
+    .hero-card .hc-head { display: flex; justify-content: space-between; align-items: baseline; padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--line); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--ink-2); }
+    .hero-card .hc-row { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: center; padding: 0.95rem 1.5rem; border-bottom: 1px solid var(--line-soft); }
+    .hero-card .hc-row:last-child { border-bottom: none; }
+    .hero-card .hc-row .ic { color: var(--accent); flex: none; }
+    .hero-card .hc-row .nm { font-family: var(--serif); font-size: 1.05rem; }
+    .hero-card .hc-row .sub { font-size: 0.82rem; color: var(--ink-3); }
+    /* Hero · imagen con MÁSCARA DE ARCO curvo (curved image mask): borde izquierdo en gran arco,
+       a sangre por la derecha. Se logra con border-radius enorme en las esquinas izquierdas. */
+    .hero-visual { position: relative; width: calc(100% + 7vw); margin-right: -7vw; } /* se ensancha a la derecha para sangrar al borde (el exceso lo recorta overflow-x:hidden del body) */
+    .hero-figure { position: relative; margin: 0; height: clamp(380px, 44vw, 560px); overflow: hidden; box-shadow: var(--shadow-lg);
+      border-radius: 40% 0 0 40% / 50% 0 0 50%; } /* TL y BL con radio grande = arco continuo a la izquierda; derecha recta */
+    .hero-figure img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.98) contrast(1.03); transition: transform 1.4s var(--ease-soft); }
+    .hero-visual:hover .hero-figure img { transform: scale(1.04); }
+    /* Tinte de marca en diagonal (mismo lenguaje que la banda duotono y la foto de Confianza) */
+    .hero-figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, color-mix(in srgb, var(--accent) 26%, transparent), transparent 42%); mix-blend-mode: multiply; pointer-events: none; }
+    /* Chip de rating de Google flotando sobre la figura (sustituye visualmente a la tarjeta de contacto) */
+    .hero-rate { position: absolute; left: 24%; bottom: 8%; display: inline-flex; align-items: center; gap: 0.45rem; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 0.55rem 1rem; box-shadow: var(--shadow-md); font-size: 0.82rem; font-weight: 600; white-space: nowrap; }
+    .hero-rate .st { color: var(--gold); }
+
+    .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+    .stat { padding: 1.5rem 1.75rem; border-left: 1px solid var(--line); }
+    .stat:first-child { border-left: none; padding-left: 0; }
+    .stat .v { font-family: var(--serif); font-size: clamp(2rem,5vw,3.2rem); line-height: 1; }
+    .stat .v .u { font-size: 0.9rem; color: var(--ink-2); font-family: var(--sans); }
+    .stat .l { font-size: 0.82rem; color: var(--ink-2); margin-top: 0.5rem; }
+
+    /* Ticker */
+    .ticker { display: flex; overflow: hidden; border-block: 1px solid var(--line); padding-block: 1.1rem; -webkit-mask-image: linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); mask-image: linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); }
+    .ticker-track { display: flex; gap: 3rem; padding-right: 3rem; animation: tick 45s linear infinite; white-space: nowrap; }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+    @keyframes tick { to { transform: translateX(calc(-50% - 1.5rem)); } }
+    .tick-item { display: inline-flex; align-items: baseline; gap: 0.7rem; font-family: var(--serif); font-size: 1.25rem; }
+    .tick-item .sep { color: var(--accent); }
+
+    /* Manifiesto */
+    .split { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3.5rem; align-items: start; }
+    .split-sticky { position: sticky; top: 7rem; }
+    .section-head { max-width: 60ch; }
+    .section-head .kicker { margin-bottom: 1.25rem; }
+    .section-head h2 { margin-bottom: 1rem; }
+    .manifesto { max-width: 26ch; }
+    .manifesto .big { font-family: var(--serif); font-size: clamp(2rem,5.5vw,3.6rem); line-height: 1.08; letter-spacing: -0.02em; }
+    .manifesto .big em { color: var(--accent); }
+
+    /* Servicios (índice editorial numerado) */
+    .serv-list { display: grid; gap: 0; }
+    .serv-item { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center; padding: 1.6rem 0.5rem; border-top: 1px solid var(--line); transition: padding 0.5s var(--ease-spring), background 0.4s var(--ease-soft); }
+    .serv-list .serv-item:last-child { border-bottom: 1px solid var(--line); }
+    .serv-item:hover { padding-left: 1.25rem; background: linear-gradient(90deg,var(--paper-2),transparent); }
+    .serv-item .si-idx { font-family: var(--serif); font-size: 1.5rem; color: var(--ink-3); width: 2.5rem; }
+    .serv-item .si-name { font-family: var(--serif); font-size: clamp(1.4rem,3vw,2rem); }
+    .serv-item .si-desc { color: var(--ink-2); font-size: 0.9rem; margin-top: 0.25rem; max-width: 60ch; }
+    .serv-item .si-arrow { color: var(--accent); flex: none; }
+
+    /* Oferta / value stack (primera valoración) — estilo recibo de lujo */
+    .offer-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items: center; }
+    .stack { display: grid; gap: 0; }
+    .stack-row { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: baseline; padding: 0.95rem 0; border-bottom: 1px solid var(--line-soft); }
+    .stack-row .ck { color: var(--accent); flex: none; }
+    .stack-row .it { font-weight: 600; font-size: 1rem; }
+    .stack-row .it small { display: block; font-weight: 400; color: var(--ink-2); font-size: 0.82rem; }
+    .stack-row .vv { font-family: var(--serif); font-size: 1.05rem; color: var(--ink-3); white-space: nowrap; }
+    .stack-row .vv s { color: var(--ink-3); }
+    .offer-aside { background: var(--paper-2); border: 1px solid var(--line-soft); border-radius: var(--r-lg); padding: 2rem; text-align: center; }
+    .offer-aside .tot { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ink-2); }
+    .offer-aside .tot s { color: var(--ink-3); }
+    .offer-aside .ap { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); margin-top: 1rem; }
+    .offer-aside .big { font-family: var(--serif); font-size: clamp(2.6rem, 7vw, 3.6rem); line-height: 1; color: var(--accent); margin: 0.3rem 0; }
+    .offer-aside .sub { color: var(--ink-2); font-size: 0.88rem; margin-bottom: 1.25rem; }
+    @media (max-width: 900px) { .offer-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+    /* Por qué elegirnos (diferenciadores) */
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .why { padding: 2rem 1.75rem; border-radius: var(--r-md); background: var(--card); border: 1px solid var(--line); transition: transform 0.55s var(--ease-spring), box-shadow 0.5s var(--ease-soft), border-color 0.4s var(--ease-soft); }
+    .why:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
+    .why .wic { width: 3.1rem; height: 3.1rem; border-radius: 50%; display: grid; place-items: center; background: color-mix(in srgb, var(--accent) 10%, var(--paper-2)); color: var(--accent); margin-bottom: 1.1rem; }
+    .why h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .why p { color: var(--ink-2); font-size: 0.92rem; }
+
+    /* Proceso */
+    .steps { display: grid; gap: 0; }
+    .step { display: grid; grid-template-columns: auto 1fr; gap: 2rem; padding: 2rem 0; border-top: 1px solid var(--line); align-items: start; }
+    .steps .step:last-child { border-bottom: 1px solid var(--line); }
+    .step .sn { font-family: var(--serif); font-size: clamp(2.5rem,6vw,4rem); line-height: 0.9; color: var(--accent); }
+    .step h3 { font-size: clamp(1.3rem,3vw,1.8rem); margin-bottom: 0.5rem; }
+    .step p { color: var(--ink-2); max-width: 52ch; }
+
+    /* Testimonios */
+    .quotes { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .quote { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); padding: 1.9rem; box-shadow: var(--shadow-sm); }
+    .quote .mark { font-family: var(--serif); font-size: 3rem; line-height: 0.6; color: var(--accent); }
+    .quote p { font-family: var(--serif); font-size: 1.1rem; line-height: 1.45; margin: 0.75rem 0 1.5rem; }
+    .quote .who { display: flex; align-items: center; gap: 0.75rem; }
+    .quote .who .av { width: 2.4rem; height: 2.4rem; border-radius: 50%; display: grid; place-items: center; font-weight: 700; background: var(--accent); color: var(--paper); }
+    .quote .who .nm { font-weight: 600; font-size: 0.92rem; }
+    .quote .who .ci { font-size: 0.78rem; color: var(--ink-3); }
+
+    /* Confianza / sello */
+    .confi-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+    .confi-media { position: relative; border-radius: var(--r-md); overflow: hidden; aspect-ratio: 4 / 3; box-shadow: var(--shadow-md); background: var(--paper-2); }
+    .confi-media img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.96) contrast(1.02); }
+    .confi-media .seal-float { position: absolute; right: 0.9rem; bottom: 0.9rem; width: 5.4rem; height: 5.4rem; border-radius: 50%; display: grid; place-items: center; text-align: center; background: rgba(250,246,239,0.94); border: 1px solid var(--gold); color: var(--gold); font-family: var(--serif); font-size: 0.66rem; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.08em; backdrop-filter: blur(4px); }
+    @media (max-width: 760px) { .confi-grid { grid-template-columns: 1fr; } }
+    .seal-row { display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: center; }
+    .seal { width: 7rem; height: 7rem; border-radius: 50%; flex: none; display: grid; place-items: center; text-align: center; border: 2px solid var(--gold); color: var(--gold); font-family: var(--serif); font-size: 0.72rem; line-height: 1.1; text-transform: uppercase; letter-spacing: 0.1em; }
+    .compat { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+    .compat .b { padding: 0.55rem 1.1rem; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-size: 0.88rem; font-weight: 500; }
+
+    /* FAQ */
+    .faq { display: grid; gap: 0; }
+    .faq details { border-top: 1px solid var(--line); }
+    .faq details:last-child { border-bottom: 1px solid var(--line); }
+    .faq summary { list-style: none; cursor: pointer; padding: 1.5rem 0.25rem; display: flex; justify-content: space-between; gap: 1.5rem; align-items: center; font-family: var(--serif); font-size: clamp(1.1rem,2.4vw,1.4rem); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary .pm { flex: none; color: var(--accent); transition: transform 0.4s var(--ease-spring); }
+    .faq details[open] summary .pm { transform: rotate(45deg); }
+    .faq .ans { padding: 0 0.25rem 1.6rem; color: var(--ink-2); max-width: 70ch; }
+    .faq .ans strong { color: var(--ink); }
+
+    /* Urgencia / contacto */
+    .urgency { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; justify-content: center; padding: 0.9rem 1.5rem; border-radius: 999px; border: 1px solid var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); font-size: 0.92rem; }
+
+    /* Footer */
+    .footer { border-top: 1px solid var(--line); padding: 4.5rem 0 3rem; }
+    .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-logo { font-family: var(--serif); font-size: 2rem; margin-bottom: 0.75rem; }
+    .footer-logo .dot { color: var(--accent); }
+    .footer p { color: var(--ink-2); font-size: 0.92rem; max-width: 40ch; }
+    .footer h5 { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--ink-3); margin-bottom: 1rem; }
+    .footer .fcol a { display: block; color: var(--ink-2); font-size: 0.92rem; padding: 0.3rem 0; transition: color 0.3s; }
+    .footer .fcol a:hover { color: var(--accent); }
+    .footer-bottom { padding-top: 2rem; border-top: 1px solid var(--line-soft); display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; }
+    .footer-bottom, .footer-bottom a { color: var(--ink-3); font-size: 0.8rem; }
+    .footer-bottom .vera { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .footer-bottom .vera b { color: var(--ink-2); font-family: var(--serif); font-weight: 500; }
+    .legal summary { cursor: pointer; font-size: 0.82rem; color: var(--ink-2); font-weight: 600; list-style: none; }
+    .legal summary::-webkit-details-marker { display: none; }
+    .legal summary::before { content: "+ "; color: var(--accent); }
+    .legal[open] summary::before { content: "− "; }
+    .legal p { font-size: 0.8rem; color: var(--ink-3); max-width: 80ch; margin-top: 0.75rem; line-height: 1.6; }
+
+    /* Banda editorial con imagen profesional + tinte de marca (duotono) */
+    .eband { position: relative; min-height: clamp(320px, 42vw, 460px); display: grid; align-items: center; overflow: hidden;
+      /* Fallback de degradado por si la imagen no carga: nunca queda un hueco feo. */
+      background-color: var(--accent-deep);
+      background-image:
+        linear-gradient(120deg, color-mix(in srgb, var(--accent-deep) 92%, transparent), color-mix(in srgb, var(--ink) 55%, transparent)),
+        var(--eb-img);
+      background-size: cover; background-position: center; background-blend-mode: multiply;
+      border-block: 1px solid var(--line); }
+    .eband::after { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity: 0.06; mix-blend-mode: overlay; pointer-events: none; }
+    .eband .eb-in { position: relative; z-index: 1; max-width: 30ch; }
+    .eband .eb-kicker { color: color-mix(in srgb, var(--paper) 85%, var(--accent)); }
+    .eband .eb-kicker::before { background: var(--paper); }
+    .eband .eb-quote { font-family: var(--serif); font-size: clamp(1.7rem, 4vw, 3rem); line-height: 1.1; color: var(--paper); margin-top: 1rem; }
+
+    /* Reseñas — badge de Google verificado */
+    .gbadge { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.7rem 1.25rem; border-radius: 999px; border: 1px solid var(--line); background: var(--card); box-shadow: var(--shadow-sm); }
+    .gbadge .glogo { font-family: var(--serif); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
+    .gbadge .glogo .b{color:#4285F4}.gbadge .glogo .r{color:#EA4335}.gbadge .glogo .y{color:#FBBC05}.gbadge .glogo .g{color:#34A853}
+    .gbadge .grate { display: flex; flex-direction: column; line-height: 1.15; }
+    .gbadge .grate .rr { font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; }
+    .gbadge .grate .rr .stars { color: var(--gold); letter-spacing: 0.05em; }
+    .gbadge .grate .sub { font-size: 0.74rem; color: var(--ink-3); }
+
+    /* Ubicación / cómo llegar */
+    .loc-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 2.5rem; align-items: stretch; }
+    .loc-map { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-md); min-height: 340px; background: var(--paper-2); }
+    .loc-map iframe { width: 100%; height: 100%; min-height: 340px; border: 0; display: block; filter: saturate(0.92) contrast(1.02); }
+    .loc-card { display: flex; flex-direction: column; justify-content: center; gap: 1.1rem; }
+    .loc-row { display: grid; grid-template-columns: auto 1fr; gap: 0.9rem; align-items: start; }
+    .loc-row .ic { color: var(--accent); flex: none; margin-top: 2px; }
+    .loc-row .nm { font-family: var(--serif); font-size: 1.1rem; }
+    .loc-row .sub { font-size: 0.88rem; color: var(--ink-2); }
+    .loc-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.5rem; }
+    @media (max-width: 900px) { .loc-grid { grid-template-columns: 1fr; } }
+
+    /* Redes sociales */
+    .socials { display: flex; gap: 0.6rem; }
+    .socials .soc { width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); background: var(--card); color: var(--ink-2); transition: transform 0.4s var(--ease-spring), color 0.3s, border-color 0.3s, background 0.3s; }
+    .socials .soc:hover { transform: translateY(-3px); color: var(--accent); border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--card)); }
+
+    /* Botón flotante de WhatsApp */
+    .wa-float { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 95; display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.25rem 0.85rem 1.1rem; border-radius: 999px; background: var(--whatsapp); color: #fff; font-weight: 600; font-size: 0.95rem; box-shadow: 0 18px 40px -12px rgba(31,122,77,0.6); transition: transform 0.5s var(--ease-spring), box-shadow 0.4s; }
+    .wa-float:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 24px 52px -12px rgba(31,122,77,0.7); }
+    .wa-float .wa-txt { white-space: nowrap; }
+    .wa-float svg { flex: none; }
+    @media (max-width: 600px) { .wa-float .wa-txt { display: none; } .wa-float { padding: 0.95rem; right: 1rem; bottom: 1rem; } }
+
+    @media (max-width: 1000px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      /* Stacked: la imagen deja de sangrar y pasa a un arco curvo abajo (curved mask suave) */
+      .hero-visual { width: 100%; margin-right: 0; }
+      .hero-figure { height: auto; aspect-ratio: 16 / 11; border-radius: var(--r-lg) var(--r-lg) 42% 42% / var(--r-lg) var(--r-lg) 16% 16%; }
+      .hero-rate { left: 50%; transform: translateX(-50%); bottom: 7%; }
+      .split { grid-template-columns: 1fr; gap: 2rem; }
+      .split-sticky { position: static; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    /* El nav horizontal solo en desktop ancho; en tablet/móvil usa el menú burger (más limpio) */
+    @media (max-width: 900px) {
+      .nav-mid, .nav-cta-d { display: none; }
+      .burger { display: block; }
+    }
+    @media (max-width: 720px) {
+      .stats { grid-template-columns: 1fr 1fr; gap: 0; }
+      .stat { border-left: none; border-top: 1px solid var(--line); padding: 1.25rem 0; }
+      .stat:first-child, .stat:nth-child(2) { border-top: none; }
+      .stat:nth-child(even) { padding-left: 1.25rem; border-left: 1px solid var(--line); }
+      .quotes { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .panel > .panel-in { padding: 1.5rem; }
+      .seal-row { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+      .step { grid-template-columns: 1fr; gap: 0.5rem; }
+      .serv-item { grid-template-columns: auto 1fr; }
+      .serv-item .si-arrow { display: none; }
+    }
+
+    /* ===== Afinado móvil / iPhone (compatibilidad full) ===== */
+    @media (max-width: 600px) {
+      .wrap { padding: 0 1.25rem; }
+      .nav-in { padding: 0.75rem 1.25rem; }
+      /* Nombre del negocio (a veces largo) sin desbordar el nav */
+      .nav-logo { font-size: 1.05rem; max-width: 64vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .hero { padding-top: 6.5rem; padding-bottom: 2rem; }
+      .hero-grid { gap: 2rem; }
+      .display { font-size: clamp(2rem, 9.5vw, 2.9rem); }
+      .h-xl { font-size: clamp(1.85rem, 8vw, 2.5rem); }
+      .lead { font-size: 1.02rem; }
+      .section { padding-block: 3.5rem; }
+      /* Botones compactos: que NO se vean gigantes en pantalla pequeña */
+      .btn { font-size: 0.92rem; padding: 0.72rem 0.78rem 0.72rem 1.25rem; }
+      .btn .ic { width: 1.7rem; height: 1.7rem; }
+      .btn--lg { font-size: 0.96rem; padding: 0.82rem 0.86rem 0.82rem 1.4rem; }
+      .btn--lg .ic { width: 1.95rem; height: 1.95rem; }
+      .btn-line { font-size: 0.88rem; padding: 0.58rem 1rem; }
+      /* CTA del hero: botón a todo el ancho y el rating debajo (parejo) */
+      .hero-cta { gap: 1rem; }
+      .hero-cta .btn--lg { width: 100%; justify-content: space-between; }
+      /* Imagen del hero centrada y a tamaño cómodo (no enorme) */
+      .hero-visual { max-width: 440px; margin-inline: auto; }
+      .hero-figure { aspect-ratio: 5 / 4; }
+      .hero-rate { font-size: 0.78rem; padding: 0.5rem 0.85rem; bottom: 6%; }
+      /* WhatsApp flotante respeta el área segura del iPhone (notch/home indicator) */
+      .wa-float { bottom: calc(1rem + env(safe-area-inset-bottom)); }
+    }
+    @media (max-width: 380px) {
+      .display { font-size: 1.95rem; }
+      .hero-visual { max-width: 280px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-wash" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-in">
+      <a href="#" class="nav-logo">{{NOMBRE_CORTO}}<span class="dot">.</span></a>
+      <nav class="nav-mid" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#porque">Por qué</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+      <div class="nav-right">
+        <a href="{{WA_LINK}}" target="_blank" rel="noopener" class="btn-line nav-cta-d">Agendar cita</a>
+        <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+          <span class="ln a"></span><span class="ln b"></span><span class="ln c"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mmenu" id="mmenu">
+    <a href="#servicios">Servicios</a>
+    <a href="#proceso">Cómo trabajamos</a>
+    <a href="#opiniones">Opiniones</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#faq">Preguntas</a>
+    <a href="{{WA_LINK}}" target="_blank" rel="noopener" class="cta">Agendar cita &rarr;</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="kicker hero-kicker"><span class="num">{{UBICACION}}</span> · {{CAT_LABEL}}</div>
+          <h1 class="display">{{HERO_TITULO_1}}<br /><span class="accent">{{HERO_TITULO_2}}</span></h1>
+          <p class="lead hero-lead">{{HERO_LEAD}}</p>
+          <div class="hero-cta">
+            <a href="{{WA_LINK}}" target="_blank" rel="noopener" class="btn btn--whats btn--lg">
+              <span>Agenda por WhatsApp</span>
+              <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+            </a>
+            <div class="hero-meta">
+              <span class="stars" aria-hidden="true">{{ESTRELLAS}}</span>
+              <span>{{RATING}} · {{RESENAS}} opiniones en Google</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal d1">
+          <figure class="hero-figure">
+            <img src="{{HERO_IMG}}" srcset="{{HERO_SRCSET}}" sizes="(max-width: 1000px) 92vw, 45vw" alt="Atención profesional en {{NOMBRE}}" loading="eager" fetchpriority="high" />
+          </figure>
+          <span class="hero-rate"><span class="st">★</span> {{RATING}} · {{RESENAS}} en Google</span>
+        </div>
+      </div>
+
+      <div class="wrap" style="margin-top: clamp(3rem,7vw,5rem);">
+        <div class="stats reveal">
+          <div class="stat"><div class="v">{{RATING}}<span class="u"> ★</span></div><div class="l">Calificación en Google</div></div>
+          <div class="stat"><div class="v" data-count="{{RESENAS_NUM}}" data-prefix="+">+0</div><div class="l">Opiniones de pacientes</div></div>
+          <div class="stat"><div class="v">{{STAT_3_V}}</div><div class="l">{{STAT_3_L}}</div></div>
+          <div class="stat"><div class="v">100<span class="u">%</span></div><div class="l">Atención personalizada</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-label="Servicios">
+      <div class="ticker-track">{{TICKER_HTML}}{{TICKER_HTML}}</div>
+    </div>
+
+    <!-- MANIFIESTO -->
+    <section class="section">
+      <div class="wrap split">
+        <div class="reveal"><div class="kicker"><span class="num">01</span> Bienvenido</div></div>
+        <div class="manifesto reveal d1" style="max-width:none;">
+          <p class="big">{{MANIFIESTO}}</p>
+          <p class="lead" style="margin-top:1.75rem;">{{MANIFIESTO_SUB}}</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-wrap"><div class="rule"></div></div>
+
+    <!-- SERVICIOS -->
+    <section class="section" id="servicios">
+      <div class="wrap">
+        <div class="section-head reveal" style="margin-bottom: 2.5rem;">
+          <div class="kicker"><span class="num">02</span> Servicios</div>
+          <h2 class="h-xl">Todo lo que necesitas, <span class="serif-italic">en un solo lugar</span></h2>
+          <p class="lead">Tratamientos pensados para cuidarte con la mejor tecnología y un trato cercano.</p>
+        </div>
+        <div class="serv-list">{{SERVICIOS_HTML}}</div>
+      </div>
+    </section>
+
+    <div class="rule-wrap"><div class="rule"></div></div>
+
+    <!-- POR QUÉ ELEGIRNOS -->
+    <section class="section" id="porque">
+      <div class="wrap">
+        <div class="section-head reveal" style="margin-bottom: 2.5rem;">
+          <div class="kicker"><span class="num">03</span> Por qué elegirnos</div>
+          <h2 class="h-xl">Una experiencia <span class="serif-italic">diferente</span></h2>
+          <p class="lead">No solo cuidamos tu salud: cuidamos cómo te sientes en cada visita.</p>
+        </div>
+        <div class="why-grid">{{DIFERENCIADORES_HTML}}</div>
+      </div>
+    </section>
+
+    <!-- BANDA EDITORIAL (imagen profesional con tinte de marca) -->
+    <section class="eband reveal" style="--eb-img: url('{{BANNER_IMG}}')" aria-hidden="true">
+      <div class="wrap">
+        <div class="eb-in">
+          <div class="kicker eb-kicker">{{CAT_LABEL}} · {{CIUDAD}}</div>
+          <p class="eb-quote">{{BANNER_QUOTE}}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="section" id="proceso">
+      <div class="wrap split">
+        <div class="split-sticky reveal">
+          <div class="kicker"><span class="num">04</span> Cómo trabajamos</div>
+          <h2 class="h-xl" style="margin:1rem 0;">Tu cita, sin complicaciones</h2>
+          <p class="lead">Desde el primer mensaje hasta tu tratamiento, te acompañamos en cada paso.</p>
+          <a href="{{WA_LINK}}" target="_blank" rel="noopener" class="link-underline" style="margin-top:1.5rem;">Escríbenos ahora &rarr;</a>
+        </div>
+        <div class="steps reveal d1">
+          <div class="step"><div class="sn">01</div><div><h3>Escríbenos</h3><p>Cuéntanos qué necesitas por WhatsApp. Te respondemos rápido y agendamos tu valoración.</p></div></div>
+          <div class="step"><div class="sn">02</div><div><h3>Valoración</h3><p>Te recibimos, evaluamos tu caso y te explicamos las opciones con total claridad y sin presión.</p></div></div>
+          <div class="step"><div class="sn">03</div><div><h3>Tu tratamiento</h3><p>Diseñamos un plan a tu medida y te acompañamos hasta ver los resultados que esperas.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-wrap"><div class="rule"></div></div>
+
+    <!-- OPINIONES -->
+    <section class="section" id="opiniones">
+      <div class="wrap">
+        <div class="section-head reveal" style="margin-bottom: 2.25rem;">
+          <div class="kicker"><span class="num">05</span> Opiniones</div>
+          <h2 class="h-xl">Lo que dicen nuestros pacientes</h2>
+        </div>
+        <div class="reveal d1" style="display:flex; flex-wrap:wrap; align-items:center; gap:1.25rem; margin-bottom:2.5rem;">
+          <span class="gbadge">
+            <span class="glogo"><span class="b">G</span><span class="r">o</span><span class="y">o</span><span class="b">g</span><span class="g">l</span><span class="r">e</span></span>
+            <span class="grate">
+              <span class="rr">{{RATING}} <span class="stars">{{ESTRELLAS}}</span></span>
+              <span class="sub">{{RESENAS}} opiniones</span>
+            </span>
+          </span>
+          <a href="{{REVIEWS_URL}}" target="_blank" rel="noopener" class="link-underline">Leer las opiniones en Google &rarr;</a>
+        </div>
+        <div class="quotes">
+          <figure class="quote reveal d1"><div class="mark">&ldquo;</div><p>{{TESTIMONIO_1}}</p><figcaption class="who"><span class="av">M</span><span><span class="nm">María L.</span><br><span class="ci">{{CIUDAD}}</span></span></figcaption></figure>
+          <figure class="quote reveal d2"><div class="mark">&ldquo;</div><p>{{TESTIMONIO_2}}</p><figcaption class="who"><span class="av" style="background:var(--gold)">J</span><span><span class="nm">Juan D.</span><br><span class="ci">{{CIUDAD}}</span></span></figcaption></figure>
+          <figure class="quote reveal d3"><div class="mark">&ldquo;</div><p>{{TESTIMONIO_3}}</p><figcaption class="who"><span class="av" style="background:var(--accent-deep)">C</span><span><span class="nm">Carolina P.</span><br><span class="ci">{{CIUDAD}}</span></span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-wrap"><div class="rule"></div></div>
+
+    <!-- CONFIANZA -->
+    <section class="section">
+      <div class="wrap">
+        <div class="panel reveal">
+          <div class="panel-in">
+            <div class="confi-grid">
+              <div class="confi-media">
+                <img src="{{CONFIANZA_IMG}}" srcset="{{CONFIANZA_SRCSET}}" sizes="(max-width: 760px) 92vw, 40vw" alt="Atención profesional en {{NOMBRE}}" loading="lazy" decoding="async" />
+                <span class="seal-float">Calidad<br>{{RATING}}★<br>en Google</span>
+              </div>
+              <div>
+                <div class="kicker"><span class="num">06</span> Confianza</div>
+                <h2 class="h-lg" style="margin:0.75rem 0;">Pacientes que vuelven y nos recomiendan</h2>
+                <p class="lead" style="font-size:1.05rem;">Cuidamos cada detalle de tu experiencia: profesionales con experiencia, equipos modernos y bioseguridad en cada cita.</p>
+                <div class="compat">
+                  <span class="b">Bioseguridad certificada</span>
+                  <span class="b">Equipos modernos</span>
+                  <span class="b">Planes de pago</span>
+                  <span class="b">Atención personalizada</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-wrap"><div class="rule"></div></div>
+
+    <!-- OFERTA / VALUE STACK -->
+    <section class="section" id="oferta">
+      <div class="wrap">
+        <div class="section-head reveal" style="margin: 0 auto 3rem; text-align:center;">
+          <div class="kicker" style="justify-content:center;"><span class="num">07</span> Tu primera visita</div>
+          <h2 class="h-xl">{{OFERTA_TITULO}}</h2>
+          <p class="lead" style="margin:1rem auto 0;">{{OFERTA_LEAD}}</p>
+        </div>
+        <div class="panel reveal d1" style="max-width: 920px; margin: 0 auto;">
+          <div class="panel-in">
+            <div class="offer-grid">
+              <div class="stack">{{VALUE_STACK_HTML}}</div>
+              <div class="offer-aside">
+                <div class="tot">Valor normal: <s>{{OFERTA_VALOR_NORMAL}}</s></div>
+                <div class="ap">Hoy, agendando por WhatsApp</div>
+                <div class="big">{{OFERTA_PRECIO}}</div>
+                <div class="sub">{{OFERTA_PRECIO_SUB}}</div>
+                <a href="{{WA_LINK}}" target="_blank" rel="noopener" class="btn btn--whats" style="margin:0 auto;">
+                  <span>Reclamar mi valoración</span>
+                  <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-wrap"><div class="rule"></div></div>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap split">
+        <div class="split-sticky reveal">
+          <div class="kicker"><span class="num">08</span> Preguntas frecuentes</div>
+          <h2 class="h-xl" style="margin:1rem 0;">Resolvemos tus dudas</h2>
+          <p class="lead">Y si te queda alguna, escríbenos por WhatsApp con confianza.</p>
+        </div>
+        <div class="faq reveal d1">{{FAQ_HTML}}</div>
+      </div>
+    </section>
+
+    <div class="rule-wrap"><div class="rule"></div></div>
+
+    <!-- UBICACIÓN / CÓMO LLEGAR -->
+    <section class="section" id="ubicacion">
+      <div class="wrap">
+        <div class="section-head reveal" style="margin-bottom: 2.5rem;">
+          <div class="kicker"><span class="num">09</span> Cómo llegar</div>
+          <h2 class="h-xl">Estamos en <span class="serif-italic">{{UBICACION}}</span></h2>
+          <p class="lead">Ven a visitarnos o escríbenos para agendar. Te esperamos.</p>
+        </div>
+        <div class="loc-grid reveal d1">
+          <div class="loc-map">
+            <iframe src="{{MAPA_EMBED_URL}}" title="Ubicación de {{NOMBRE}} en el mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+          <div class="loc-card">
+            <div class="loc-row">
+              <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <span><span class="nm">{{DIRECCION}}</span><br><span class="sub">{{CIUDAD}}, Colombia</span></span>
+            </div>
+            <div class="loc-row">
+              <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+              <span><span class="nm">Lun – Sáb · 8:00 a.m. – 6:00 p.m.</span><br><span class="sub">Domingos y festivos: cerrado</span></span>
+            </div>
+            <div class="loc-row">
+              <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <span><a href="{{TEL_HREF}}" class="nm" style="color:inherit">{{TELEFONO}}</a><br><span class="sub">Llámanos o escríbenos por WhatsApp</span></span>
+            </div>
+            <div class="loc-cta">
+              <a href="{{DIRECCIONES_URL}}" target="_blank" rel="noopener" class="btn btn--accent">
+                <span>Cómo llegar</span>
+                <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></span>
+              </a>
+              <a href="{{MAPS_URL}}" target="_blank" rel="noopener" class="btn-line">Ver en Google Maps</a>
+            </div>
+            {{SOCIALS_HTML}}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-wrap"><div class="rule"></div></div>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto" style="text-align:center;">
+      <div class="wrap" style="max-width: 760px;">
+        <div class="reveal">
+          <div class="urgency" style="margin-bottom: 2.5rem;">
+            <span>Agenda esta semana — cupos limitados</span>
+          </div>
+          <h2 class="display" style="margin-bottom: 1.25rem;">¿Listo para <span class="serif-italic" style="color:var(--accent)">tu cita</span>?</h2>
+          <p class="lead" style="margin: 0 auto 2.5rem;">Escríbenos por WhatsApp y agenda tu valoración hoy mismo. Te respondemos en minutos.</p>
+          <a href="{{WA_LINK}}" target="_blank" rel="noopener" class="btn btn--whats btn--lg" style="margin:0 auto;">
+            <span>Escríbenos por WhatsApp</span>
+            <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">{{NOMBRE_CORTO}}<span class="dot">.</span></div>
+          <p style="margin-bottom:1.25rem;">{{CAT_LABEL}} en {{CIUDAD}}. Cuidamos tu salud y tu sonrisa con un trato cercano y profesional.</p>
+          {{SOCIALS_HTML}}
+        </div>
+        <div class="fcol">
+          <h5>Navegación</h5>
+          <a href="#servicios">Servicios</a>
+          <a href="#proceso">Cómo trabajamos</a>
+          <a href="#opiniones">Opiniones</a>
+          <a href="#ubicacion">Cómo llegar</a>
+          <a href="#faq">Preguntas</a>
+        </div>
+        <div class="fcol">
+          <h5>Contacto</h5>
+          <a href="{{WA_LINK}}" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="{{DIRECCIONES_URL}}" target="_blank" rel="noopener">Cómo llegar</a>
+          <a href="{{MAPS_URL}}" target="_blank" rel="noopener">Ver en Google Maps</a>
+          <span style="color:var(--ink-2);font-size:0.92rem;display:block;padding:0.3rem 0;">{{DIRECCION}}</span>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--line-soft); padding-top:1.5rem; margin-bottom:1.5rem;">
+        <details class="legal">
+          <summary>Política de privacidad y tratamiento de datos</summary>
+          <p>En {{NOMBRE}} protegemos tus datos personales conforme a la Ley 1581 de 2012 y el Decreto 1377 de 2013 de Colombia. La información que nos compartas (nombre, teléfono y motivo de consulta) se usa únicamente para agendar tu cita y darte seguimiento; no la compartimos con terceros con fines comerciales. Puedes solicitar consultar, actualizar o eliminar tus datos escribiéndonos por WhatsApp en cualquier momento.</p>
+        </details>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; {{ANIO}} {{NOMBRE}}. Todos los derechos reservados.</span>
+        <span class="vera">Página de muestra creada por <b>Vera</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp (siempre visible, alta conversión) -->
+  <a href="{{WA_LINK}}" target="_blank" rel="noopener" class="wa-float" aria-label="Escríbenos por WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.27-.1-.46-.15-.65.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.44-.5.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.56-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.27.3-1 1-1 2.42s1.03 2.8 1.17 3c.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.31.19 1.8.12.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.27-.2-.56-.34zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.45A10 10 0 1 0 12 2zm0 18.2a8.18 8.18 0 0 1-4.17-1.14l-.3-.18-2.85.86.86-2.78-.2-.31A8.2 8.2 0 1 1 12 20.2z"/></svg>
+    <span class="wa-txt">Escríbenos</span>
+  </a>
+
+  <script>
+    // Reveal al hacer scroll
+    (function () {
+      var revealAll = function () { document.querySelectorAll('.reveal:not(.in)').forEach(function (e) { e.classList.add('in'); }); };
+      var els = document.querySelectorAll('.reveal:not(.in)');
+      if (!('IntersectionObserver' in window) || !els.length) { revealAll(); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+      // Failsafe: si algo sale mal, nunca dejar contenido oculto.
+      setTimeout(revealAll, 2500);
+    })();
+
+    // Menú móvil
+    (function () {
+      var b = document.getElementById('burger'); if (!b) return;
+      var close = function () { document.body.classList.remove('nav-open'); b.setAttribute('aria-expanded', 'false'); };
+      b.addEventListener('click', function () {
+        var open = document.body.classList.toggle('nav-open');
+        b.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('#mmenu a').forEach(function (a) { a.addEventListener('click', close); });
+    })();
+
+    // Count-up de cifras
+    (function () {
+      var nums = document.querySelectorAll('[data-count]');
+      if (!nums.length) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var animate = function (el) {
+        var target = parseFloat(el.getAttribute('data-count')) || 0;
+        var prefix = el.getAttribute('data-prefix') || '';
+        if (reduce) { el.textContent = prefix + Math.round(target).toLocaleString('es-CO'); return; }
+        var dur = 1400, start = null;
+        var step = function (ts) {
+          if (!start) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = prefix + Math.round(target * eased).toLocaleString('es-CO');
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { animate(en.target); io.unobserve(en.target); } });
+      }, { threshold: 0.5 });
+      nums.forEach(function (n) { io.observe(n); });
+    })();
+  </script>
+</body>
+</html>

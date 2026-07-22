@@ -1,0 +1,188 @@
+/* ============================================================
+   VERA · Dashboard — Tema "Editorial Luxury"
+   Mismo lenguaje visual que la plantilla de demos:
+   papel crema cálido, tinta espresso, acento terracota, grano.
+   ============================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #FAF6EF;
+  --paper-2: #F1E9DB;
+  --card: #FFFDF8;
+  --line: rgba(36, 28, 21, 0.14);
+  --line-soft: rgba(36, 28, 21, 0.07);
+
+  --ink: #211B15;
+  --ink-2: #6E6357;
+  --ink-3: #9C9286;
+
+  --clay: #B65A36;
+  --clay-deep: #97431F;
+  --sage: #6E7A5A;
+  --gold: #A4824B;
+  --whatsapp: #1f7a4d;
+
+  --shadow-sm: 0 14px 30px -18px rgba(58, 40, 26, 0.25);
+  --shadow-md: 0 34px 70px -34px rgba(58, 40, 26, 0.30);
+  --shadow-lg: 0 60px 120px -50px rgba(58, 40, 26, 0.38);
+
+  --r-lg: 1.75rem;
+  --r-md: 1.15rem;
+  --r-sm: 0.7rem;
+
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --serif: "Zodiak", "PP Editorial New", Georgia, serif;
+  --sans: "General Sans", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+::selection { background: var(--clay); color: var(--paper); }
+
+/* — Washes y grano (igual que la plantilla) — */
+.bg-wash {
+  position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(60rem 50rem at 8% -10%, rgba(110, 122, 90, 0.10), transparent 55%),
+    radial-gradient(55rem 45rem at 100% 8%, rgba(182, 90, 54, 0.08), transparent 55%),
+    radial-gradient(50rem 50rem at 50% 120%, rgba(164, 130, 75, 0.07), transparent 60%);
+}
+.grain {
+  position: fixed; inset: 0; z-index: 80; pointer-events: none;
+  opacity: 0.04; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* — Kicker editorial — */
+.kicker {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.22em; color: var(--clay);
+}
+.kicker::before { content: ""; width: 1.5rem; height: 1px; background: var(--clay); }
+.kicker .num { font-variant-numeric: tabular-nums; color: var(--ink-3); }
+
+/* — Tipografía display — */
+.display { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); line-height: 1; letter-spacing: -0.03em; }
+.serif-italic { font-family: var(--serif); font-style: italic; font-weight: 400; }
+
+/* — Botones (Island pill + flecha en burbuja) — */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.65rem 0.7rem 0.65rem 1.25rem;
+  border-radius: 999px; font-weight: 600; font-size: 0.92rem;
+  background: var(--ink); color: var(--paper);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.5s var(--ease-spring), box-shadow 0.5s var(--ease-spring), background 0.4s var(--ease-soft);
+}
+.btn .ic { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: rgba(250,246,239,0.16); transition: transform 0.5s var(--ease-spring); }
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn:hover .ic { transform: translate(3px, -2px); }
+.btn:active { transform: scale(0.98); }
+.btn--clay { background: var(--clay); }
+.btn--clay:hover { background: var(--clay-deep); }
+.btn--whats { background: var(--whatsapp); }
+.btn--whats:hover { background: #19663f; }
+
+.btn-line {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-weight: 600; font-size: 0.88rem; padding: 0.6rem 1.1rem;
+  border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink);
+  transition: background 0.4s var(--ease-soft), border-color 0.4s var(--ease-soft);
+}
+.btn-line:hover { background: var(--paper-2); border-color: var(--ink-3); }
+
+/* — Paneles / cards (Double-Bezel cálido) — */
+.panel {
+  background: var(--paper-2); border: 1px solid var(--line-soft);
+  border-radius: var(--r-lg); padding: 0.5rem; box-shadow: var(--shadow-md);
+}
+.panel > .panel-in {
+  background: var(--card); border: 1px solid var(--line-soft);
+  border-radius: calc(var(--r-lg) - 0.5rem); padding: clamp(1.25rem, 3vw, 2rem);
+}
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 1.25rem;
+  transition: transform 0.5s var(--ease-spring), box-shadow 0.5s var(--ease-soft), border-color 0.4s var(--ease-soft);
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+/* — Tag / chip — */
+.tag {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em;
+  padding: 0.32rem 0.75rem; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--card);
+}
+
+/* — Badges de temperatura — */
+.temp { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.74rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 999px; border: 1px solid var(--line); }
+.temp--frio { color: var(--frio, #5B7E9E); }
+.temp--tibio { color: var(--gold); }
+.temp--caliente { color: var(--clay); background: rgba(182,90,54,0.07); border-color: rgba(182,90,54,0.3); }
+
+/* — Inputs — */
+.field {
+  width: 100%; padding: 0.7rem 1rem; border-radius: var(--r-sm);
+  border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  font-family: var(--sans); font-size: 0.95rem;
+  transition: border-color 0.3s var(--ease-soft), box-shadow 0.3s var(--ease-soft);
+}
+.field:focus { outline: none; border-color: var(--clay); box-shadow: 0 0 0 3px rgba(182,90,54,0.12); }
+label.lbl { display: block; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-2); margin-bottom: 0.5rem; font-weight: 600; }
+
+/* — Regla divisoria — */
+.rule { height: 1px; background: var(--line); width: 100%; }
+
+/* — Reveal (entrada al montar) — */
+@keyframes rise { from { opacity: 0; transform: translateY(1rem); filter: blur(4px); } to { opacity: 1; transform: none; filter: blur(0); } }
+.reveal { animation: rise 0.7s var(--ease-soft) both; }
+
+/* — Scrollbar sutil — */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; border: 3px solid var(--paper); }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-3); }
+
+/* — Kanban — */
+.kanban { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(248px, 1fr); gap: 1rem; overflow-x: auto; padding-bottom: 1rem; }
+.kanban-col { background: var(--paper-2); border: 1px solid var(--line-soft); border-radius: var(--r-md); padding: 0.75rem; min-height: 60vh; display: flex; flex-direction: column; }
+.kanban-col.drop-on { outline: 2px dashed var(--clay); outline-offset: -2px; }
+.kanban-col-head { display: flex; align-items: center; justify-content: space-between; padding: 0.25rem 0.5rem 0.75rem; }
+.kanban-col-head .t { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ink-2); font-weight: 600; }
+.kanban-col-head .c { font-family: var(--serif); font-size: 1.1rem; color: var(--ink-3); }
+.lead-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 0.85rem; margin-bottom: 0.6rem; cursor: grab; transition: box-shadow 0.3s var(--ease-soft), transform 0.3s var(--ease-spring); }
+.lead-card:hover { box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.lead-card:active { cursor: grabbing; }
+
+/* — Sidebar — */
+.sidebar { position: sticky; top: 0; height: 100vh; width: 248px; flex: none; border-right: 1px solid var(--line); background: rgba(250,246,239,0.6); backdrop-filter: blur(8px); display: flex; flex-direction: column; padding: 1.5rem 1.1rem; }
+.side-link { display: flex; align-items: center; gap: 0.7rem; padding: 0.6rem 0.8rem; border-radius: var(--r-sm); color: var(--ink-2); font-weight: 500; font-size: 0.92rem; transition: background 0.3s var(--ease-soft), color 0.3s; }
+.side-link:hover { background: var(--paper-2); color: var(--ink); }
+.side-link.active { background: var(--ink); color: var(--paper); }
+.side-link.active svg { stroke: var(--paper); }

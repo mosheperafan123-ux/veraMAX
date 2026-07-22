@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "autonomous-loops": {
+      "source": "affaan-m/everything-claude-code",
+      "sourceType": "github",
+      "skillPath": "skills/autonomous-loops/SKILL.md",
+      "computedHash": "9ec3d2480a9a6772f38c248fd1006364d14a233274bbe39e911d0a9c7d7d9c25"
+    }
+  }
+}

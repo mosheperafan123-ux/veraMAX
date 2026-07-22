@@ -1,0 +1,40 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+
+# local env files
+.env
+.env*.local
+
+# base de datos local (SQLite)
+webleads.db
+webleads.db-journal
+webleads.db-shm
+webleads.db-wal
+
+# demos generados (se regeneran)
+/public/demos/*
+!/public/demos/.gitkeep
+
+# working tree del repo de GitHub Pages (deploy)
+/.deploy-demos
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Respaldos locales de la DB (no versionar)
+backups/

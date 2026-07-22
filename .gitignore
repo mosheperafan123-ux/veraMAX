@@ -1,0 +1,21 @@
+# third-party tool, not part of this project
+superpowers/
+
+# dependencies
+**/node_modules/
+
+# build output
+**/.next/
+**/dist/
+**/out/
+
+# local env
+**/.env
+**/.env*.local
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+*.tsbuildinfo
+next-env.d.ts

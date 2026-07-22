@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "vera-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "vera", "run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "vera-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "vera-web", "run", "dev", "--", "-p", "3100"],
+      "port": 3100
+    },
+    {
+      "name": "vera-web-prod",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "vera-web", "run", "start", "--", "-p", "3101"],
+      "port": 3101
+    }
+  ]
+}
